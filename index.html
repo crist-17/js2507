@@ -18,7 +18,7 @@
         }
 
         #outer {
-
+            position: relative;
             width: 900px;
             height: 1100px;
             margin: 50px auto;
@@ -27,13 +27,11 @@
         }
 
         .wrapper {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            position: relative;
         }
 
         .container {
+            position: absolute;
             background-color: rgb(124, 196, 224);
             border: 2px solid blue;
             border-radius: 25px;
@@ -44,7 +42,8 @@
             background: linear-gradient(to right bottom, rgb(78, 170, 231), white);
             height: 150px;
             overflow: hidden;
-            
+            transition: all 0.4s ease;
+            transform: translateY(-10px);
         }
 
         .container p {
@@ -60,6 +59,8 @@
             line-height: 1.2;
             text-shadow: 1px 1px black;
 
+            display: inline-block;
+            transition: transform 0.3s, color 0.3s;
         }
 
         .container a:hover {
@@ -67,12 +68,41 @@
             font-size: 24px;
             cursor: pointer;
 
+            transform: scale(1.1);
+            color: rgb(230, 197, 10);
         }
 
-        .container:hover {
+        #con_1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        #con_1:hover {
+
             height: 300px;
             z-index: 10;
-           
+
+        }
+
+        .container:nth-child(4n+1) {
+            left: 0;
+        }
+
+        .container:nth-child(4n+2) {
+            left: 220px;
+        }
+
+        /* gap 50px 포함 */
+        .container:nth-child(4n+3) {
+            left: 440px;
+        }
+
+        .container:nth-child(4n+4) {
+            left: 660px;
+        }
+
+        #agu_1 {
+            background: linear-gradient(to right bottom, rgb(240, 236, 4), white);
         }
     </style>
 </head>
@@ -104,7 +134,7 @@
                     <br><a href="./homework/0728/home_0728_02.html">0728_02</a>
                 </p>
             </div>
-            <div class="container">
+            <div class="container" id="con_1">
                 <h2>day04_0729</h2><br>
                 <p><a href="./homework/0729/index_01.html">0729_01</a>
 
@@ -127,9 +157,54 @@
                     <br><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0731</a>
                 </p>
             </div>
+            <div class="container" id="agu_1">
+                <h2>8월 수업</h2><br>
+                <p><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">덥다</a>
+                    <br><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">더워</a>
+                </p>
+            </div>
+            <div class="container">
+                <h2>day07_0801</h2><br>
+                <p><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0801</a>
+                    <br><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0801</a>
+                </p>
+            </div>
+            <div class="container">
+                <h2>day08_0804</h2><br>
+                <p><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0804</a>
+                    <br><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0804</a>
+                </p>
+            </div>
+            <div class="container">
+                <h2>day09_0805</h2><br>
+                <p><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0805</a>
+                    <br><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0805</a>
+                </p>
+            </div>
+   <div class="container">
+                <h2>day10_0806</h2><br>
+                <p><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0806</a>
+                    <br><a href="#" onclick="alert('아직준비중입니다.기다려주세요')">0806</a>
+                </p>
+            </div>
         </div>
+
+    </div>
     </div>
     </div>
     </table>
+    <script>
+        const containers = document.querySelectorAll('.container');
+        const boxHeight = 150; // 박스 높이
+        const gap = 50;        // 줄 간격
+        const perRow = 4;      // 한 줄에 몇 개
 
+        containers.forEach((box, index) => {
+            // 몇 번째 행인지 계산 (0행부터 시작)
+            const row = Math.floor(index / perRow);
+
+            // top 좌표 = 박스 높이 + gap * 행번호
+            box.style.top = `${row * (boxHeight + gap)}px`;
+        });
+    </script>
 </body>
