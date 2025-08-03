@@ -14,11 +14,11 @@ let timePm = 18
 // myHour = 17
 
 
-if(myHour < 10) {
+if(myHour <= 10) {
 
     output.innerHTML = '<img src="./images/morning.png" alt="등교">'
 
-}else if(myHour > 17) {
+}else if(myHour >= 17) {
     output.innerHTML = '<img src="./images/gohme.png" alt="귀가">'
 }
 else{
