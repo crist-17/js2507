@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #result {
+        position: absolute;
+        top: 50px;
+    }
+
+    #win {
+        border: 1px solid black;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+
+    #myDiv1, #myDiv2 {
+        background-color: rgb(8, 236, 77);
+        padding: 50px;
+        width: 150px;
+       
+    }
+
+    #myP1, #myP2 {
+        background-color: white;
+        font-size: 20px;
+        border: 1px solid;
+        padding: 20px;
+        width: 70px;
+    }
+    #myDiv {
+        background-color: blueviolet;
+        border: 1px solid;
+        padding: 50px;
+        color: aliceblue;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <button id="myBtn">클릭</button><br><br><br><br><br><br>
+    <button id="myBtn2">클릭2</button>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <p id="win">윈도우를 늘리고줄여보세요</p><br><br><br><br>
+    <button id="myBtn3">연산</button>
+    <p id="result3"></p><br><br>
+
+    <div id="myDiv1">
+        <h2>버블링</h2>
+        <p id="myP1">클릭</p>
+    </div><br>
+    <div id="myDiv2">
+        <h2>캡쳐링</h2>
+        <p id="myP2">클릭</p>
+    </div><br>
+
+    <div id="myDiv">
+        <p>remove 중요합니다</p>
+        <button onclick="removeHandler()" id="myBtn4">Remove</button>
+    </div>
+    <p id="result4"></p>
+<br><br><br><br><br><br>
+
+    <script src="./event_listener.js"></script>
+</body>
+
+</html>

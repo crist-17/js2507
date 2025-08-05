@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="checkCookies()">
+    <h1>>JavaScript HTML Events</h1>
+
+    <h2 onclick="this.innerHTML='웁스!'">이글자를 클릭하세요</h2>
+    <h2 onclick="changeText(this)">js를 클릭하세요</h2>
+
+    <!-- /////////////////////////// -->
+<button onclick="displayDate()">지금시간은?</button>
+<p id="time"></p>
+
+<button id="myBtn">진행시켜</button>
+<p id="time2"></p>
+<!-- ////////////////////////////////////// -->
+
+<p id="cook"></p>
+
+<!-- //////////////////////////////////////////// -->
+name : <input type="text" id="fname" oninput="upperCase()">
+
+
+<!-- //////////////////////////////////////////// --><br><br><br>
+
+
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style = "background-color: red; width: 120px; height: 30px;padding: 30px;">
+    마우스를 올려보세요
+</div>
+<!-- ///////////////////////////////////////////////// -->
+<br><br><br>
+
+<div onmousedown="mDown(this)" onmouseup="mUp(this)" style = "background-color: red; width: 120px; height: 30px;padding: 30px;">
+   클기
+</div>
+
+
+
+    <script src="./dom_event.js"></script>
+</body>
+
+</html>

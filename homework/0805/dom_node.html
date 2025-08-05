@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <p id="p1">첫번째</p>
+        <p id="p2">두번째</p>
+        <!-- <p>this is new</p> -->
+    </div>
+    <hr>
+    <div id="div2">
+        <p id="p3">첫번째</p>
+           <p id="p4">두번째</p>
+    </div>
+    <hr>
+    <div>
+        <p id="p5">지울것</p>
+        <p id="p6">살릴것</p>
+        <button onclick="myF5()">지우기</button>
+    </div>
+    <script>
+        const myP = document.createElement("p")
+        myP.id= "myId"
+        myP.classList.add("cls")
+
+        const mytxt = document.createTextNode("새번째")
+        myP.appendChild(mytxt)
+        let div1 = document.getElementById("div1")
+        div1.appendChild(myP)
+//////////////////////////////////////////////////////////
+        const myP1 = document.createElement("p")
+        const myTxt1 = document.createTextNode("이게진짜첫번째")
+        myP1.appendChild(myTxt1)
+
+        const div2 = document.getElementById("div2")
+        const child = document.getElementById("p3")
+        div2.insertBefore(myP1,child)
+
+        ///////////////////////////////////////////////////
+
+        function myF5() {
+            document.getElementById("p5").remove()
+        }
+
+
+    </script>
+</body>
+
+</html>
